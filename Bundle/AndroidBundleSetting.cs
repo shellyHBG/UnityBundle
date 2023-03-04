@@ -5,20 +5,20 @@ namespace Builder.Bundle
     public class AndroidBundleSetting : IBundleSetting
     {
         #region implement IBundleSetting
-        void IBundleSetting.SetBundleId(string appId)
+        void IBundleSetting.SetBundleId(string inAppId)
         {
-            PlayerSettings.SetApplicationIdentifier(BuildTargetGroup.Android, appId);
+            PlayerSettings.SetApplicationIdentifier(BuildTargetGroup.Android, inAppId);
         }
-        void IBundleSetting.SetBundleVersion(string version, int versionCode)
+        void IBundleSetting.SetBundleVersion(string inVersion, int inVersionCode)
         {
-            PlayerSettings.bundleVersion = version;
-            PlayerSettings.Android.bundleVersionCode = versionCode;
+            PlayerSettings.bundleVersion = inVersion;
+            PlayerSettings.Android.bundleVersionCode = inVersionCode;
         }
-        void IBundleSetting.SetKeystore(string pass, string keyName, string keyPass)
+        void IBundleSetting.SetKeystore(string inPass, string inKeyName, string inKeyPass)
         {
-            PlayerSettings.keystorePass = pass;
-            PlayerSettings.Android.keyaliasName = keyName;
-            PlayerSettings.Android.keyaliasPass = keyPass;
+            PlayerSettings.keystorePass = inPass;
+            PlayerSettings.Android.keyaliasName = inKeyName;
+            PlayerSettings.Android.keyaliasPass = inKeyPass;
         }
         #endregion
     }
