@@ -5,15 +5,15 @@ namespace Builder.Bundle
     public class iOSBundleSetting : IBundleSetting
     {
         #region implement IBundleSetting
-        void IBundleSetting.SetBundleId(string appId)
+        void IBundleSetting.SetBundleId(string inAppId)
         {
-            PlayerSettings.SetApplicationIdentifier(BuildTargetGroup.iOS, appId);
+            PlayerSettings.SetApplicationIdentifier(BuildTargetGroup.iOS, inAppId);
         }
-        void IBundleSetting.SetBundleVersion(string version, int versionCode)
+        void IBundleSetting.SetBundleVersion(string inVersion, int inVersionCode)
         {
-            PlayerSettings.iOS.buildNumber = versionCode.ToString();
+            PlayerSettings.iOS.buildNumber = inVersionCode.ToString();
         }
-        void IBundleSetting.SetKeystore(string pass, string keyName, string keyPass)
+        void IBundleSetting.SetKeystore(string inPass, string inKeyName, string inKeyPass)
         {
             // hook
         }
