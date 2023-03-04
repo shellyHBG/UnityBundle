@@ -5,16 +5,16 @@ namespace Builder.Bundle
     public class StandaloneBundleSetting : IBundleSetting
     {
         #region implement IBundleSetting
-        void IBundleSetting.SetBundleId(string appId)
+        void IBundleSetting.SetBundleId(string inAppId)
         {
-            PlayerSettings.SetApplicationIdentifier(BuildTargetGroup.Standalone, appId);
+            PlayerSettings.SetApplicationIdentifier(BuildTargetGroup.Standalone, inAppId);
         }
-        void IBundleSetting.SetBundleVersion(string version, int versionCode)
+        void IBundleSetting.SetBundleVersion(string inVersion, int inVersionCode)
         {
-            PlayerSettings.bundleVersion = version;
-            PlayerSettings.macOS.buildNumber = versionCode.ToString();
+            PlayerSettings.bundleVersion = inVersion;
+            PlayerSettings.macOS.buildNumber = inVersionCode.ToString();
         }
-        void IBundleSetting.SetKeystore(string pass, string keyName, string keyPass)
+        void IBundleSetting.SetKeystore(string inPass, string inKeyName, string inKeyPass)
         {
             // hook
         }
